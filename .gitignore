@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+*.py[cod]
+data/*.db
+data/*.log
+!.gitkeep
+.venv/
+20261015-0835-07.8965338.mp4
