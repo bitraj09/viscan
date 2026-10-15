@@ -12,6 +12,8 @@ Click the preview to open the full recording:
 
 The included MP4 is a compressed, GitHub-friendly copy of the recording.
 
+**Jump to:** [Features](#what-it-does) · [Quick start](#quick-start) · [AI providers](#choose-an-ai-provider) · [API](#api-examples) · [Submission summary](#submission-summary) · [Privacy](#limitations-and-privacy)
+
 ## What it does
 
 - **Voice report search:** speak a request such as “Open Priya Sharma’s latest OPG report.” The app searches the synthetic index and asks you to choose when a name is ambiguous.
@@ -110,6 +112,20 @@ See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the request and evidence flow and [
 ```powershell
 python -m pytest -q
 ```
+
+## Submission summary
+
+### What works
+
+Synthetic patient and report retrieval, ambiguity clarification, browser voice search, voice-to-draft dictation with transcript editing, evidence-grounded report follow-up, SQLite draft saving, and deterministic offline mode. The existing automated suite has 16 passing tests.
+
+### Incomplete
+
+Live Gemini use depends on a valid key and has not been verified here. The local Hugging Face model is wired into the provider switch, but its first model download and inference still need verification on a machine with Hugging Face access. Voice recognition also depends on browser support and microphone permission. The demo has no authentication or patient-level authorization.
+
+### What I would improve with more time
+
+Verify both AI providers end to end, add browser-level voice tests and a broader speech fallback, build a clinician review and audit workflow, and add authentication, patient authorization, retention controls, and deployment monitoring.
 
 ## Limitations and privacy
 
